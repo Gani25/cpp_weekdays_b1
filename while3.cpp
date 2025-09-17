@@ -25,6 +25,7 @@ int main()
 
 /*
 1. WAP to print table of n till x iteration.
+cout<< n <<" * "<< i << " = "<< table <<endl
 2. WAP to check whether the number is palindrome or not.
 3. WAP to check whther the number is a prime number or not
 4. WAP to print series of prime number from 1 to n.
