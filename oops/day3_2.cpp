@@ -60,10 +60,12 @@ public:
     void displayData()
     {
         // Try to call base class method displayData from here
-        cout << "~~~~~~Employee Information~~~~~~\n";
+        // Call Person -> displayData()
 
+        cout << "~~~~~~Employee Information~~~~~~\n";
         cout << "Emp id = " << empId << endl;
         cout << "Salary = " << salary << endl;
+        Person::displayData();
     }
 };
 
@@ -72,6 +74,4 @@ int main()
     Employee e1(1001, "Krutik Kadam", 20, "Male", 2500);
 
     e1.displayData();
-
-    // return 0;
 }
