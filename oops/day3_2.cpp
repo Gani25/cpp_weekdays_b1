@@ -65,6 +65,7 @@ public:
         cout << "~~~~~~Employee Information~~~~~~\n";
         cout << "Emp id = " << empId << endl;
         cout << "Salary = " << salary << endl;
+
         Person::displayData();
     }
 };
