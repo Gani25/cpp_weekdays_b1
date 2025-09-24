@@ -85,7 +85,6 @@ public:
 
 class PartEmployee : public Employee
 {
-private:
     double dailyWage;
     int numOfDays;
 
