@@ -10,7 +10,7 @@ int main()
     cout << "Enter a number: ";
     cin >> num;
 
-    string response = num >= 0 ? "Positive" : "Negative";
+    string response = num >= 0 ? "Number = " + to_string(num) + " is a positive number" : "Number = " + to_string(num) + " is a negative number";
     // Number = 5 is a positive number
     // Number = -6 is a negative number
     cout << response << endl;
