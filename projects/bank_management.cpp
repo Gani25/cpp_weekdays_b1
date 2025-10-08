@@ -67,6 +67,19 @@ private:
     // ACCOUNTS -> Array of Account obj
     Account accounts[MAX_CAPACITY];
 
+    int getIndexWithAccNumber(int accNumber)
+    {
+        int i;
+        for (i = 0; i < MAX_CAPACITY; i++)
+        {
+            if (accounts[i].getAccountNumber() == accNumber)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 public:
     Bank() {}
 
@@ -97,6 +110,37 @@ public:
             cout << "Sorry " << name << ", We are sorry to not serve you! Give us sometime we will create your account! Thankyou\n";
         }
     }
+
+    void depositAmount(int accNumber, double depositAmount)
+    {
+        // Search account exists in our array with that account number
+        int index = getIndexWithAccNumber(accNumber);
+        if (index == -1)
+        {
+            cout << "Sorry currently you are not avialable in our system first register your account with us!!\nThankyou";
+        }
+        else
+        {
+            // index -> Account -> Deposit
+            Account existingCustomer = accounts[index];
+            existingCustomer.credit(depositAmount);
+            accounts[index] = existingCustomer;
+        }
+    }
+    void getAccountDetails(int accNumber)
+    {
+        // Search account exists in our array with that account number
+        int index = getIndexWithAccNumber(accNumber);
+        if (index == -1)
+        {
+            cout << "Sorry currently you are not avialable in our system first register your account with us!!\nThankyou";
+        }
+        else
+        {
+            // index -> Account -> Deposit
+            accounts[index].displayAccountInfo();
+        }
+    }
 };
 int Bank::accountNumberReference = 10001;
 int Bank::indexPosition = 0;
@@ -110,4 +154,7 @@ int main()
     bank.createAccount("Mayuri Palande", 4500);
     bank.createAccount("Sohail Khan", 1800);
     bank.createAccount("John Michael", 2500);
+
+    bank.depositAmount(10004, 2000);
+    bank.getAccountDetails(10004);
 }
